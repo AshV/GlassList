@@ -222,7 +222,8 @@ body.theme-afternoon .glass-spotlight::before {
             transparent 40%);
 }
 
-.glass-spotlight:hover::before {
+.glass-spotlight:hover::before,
+.glass-spotlight.mobile-active-tilt::before {
     opacity: 1;
 }
 
