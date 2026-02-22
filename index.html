@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Homepage</title>
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        glass: {
+                            100: 'rgba(255, 255, 255, 0.1)',
+                            200: 'rgba(255, 255, 255, 0.2)',
+                            300: 'rgba(255, 255, 255, 0.3)',
+                            border: 'rgba(255, 255, 255, 0.2)',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'glass': '0 8px 32px 0 rgba(31, 38, 135, 0.37)',
+                    },
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="src/css/style.css">
+</head>
+
+<body class="bg-slate-900 text-slate-100 min-h-screen overflow-x-hidden antialiased selection:bg-white/20">
+
+    <!-- Container for dynamic ambient background -->
+    <div id="ambient-background" class="fixed inset-0 pointer-events-none z-0 overflow-hidden mix-blend-screen">
+        <!-- Blobs will be injected here via JS -->
+    </div>
+
+    <!-- Main Content wrapper, relative positioning over background -->
+    <main class="relative z-10 w-full min-h-screen flex flex-col gap-8 p-6 md:p-12 lg:p-16 max-w-[1800px] mx-auto">
+
+        <!-- Search & Filter Bar -->
+        <div id="filter-bar" class="sticky top-6 z-30 w-full"></div>
+
+        <!-- Unified Grid for Hero and Posts -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-6 pb-20 w-full">
+
+            <!-- Hero Section (First Grid Item) -->
+            <section id="hero-section" class="col-span-1 sm:col-span-2 row-span-1 flex flex-col perspective-[1000px]">
+                <!-- Content injected via JS -->
+            </section>
+
+            <!-- Posts Container (Using contents to let children join parent grid) -->
+            <div id="posts-container" class="contents">
+                <!-- Posts injected via JS -->
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Custom JS Modules -->
+    <script type="module" src="src/js/main.js"></script>
+</body>
+
+</html>
