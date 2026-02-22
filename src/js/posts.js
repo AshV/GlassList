@@ -31,7 +31,7 @@ function renderGrid(postData) {
     if (!container) return;
 
     container.innerHTML = postData.map((post, index) => `
-        <a href="post.html?id=${post.id}" class="glass-panel glass-spotlight tilt-card rounded-3xl overflow-hidden group cursor-pointer flex flex-col h-full" style="display: flex; text-decoration: none; animation: slideUp 0.6s ease forwards ${index * 0.1}s; opacity: 0; translate: 0 20px;">
+        <a href="post.html?id=${post.id}" class="glass-panel glass-spotlight tilt-card reveal-on-scroll rounded-3xl overflow-hidden group cursor-pointer flex flex-col h-full" style="display: flex; text-decoration: none;">
             
             <!-- Image Container with Parallax Zoom on Hover -->
             <div class="h-48 md:h-56 overflow-hidden relative border-b border-white/5">
@@ -57,15 +57,5 @@ function renderGrid(postData) {
         </a>
     `).join('');
 
-    // Add Slide up animation
-    const style = document.createElement('style');
-    style.innerHTML = `
-        @keyframes slideUp {
-            to {
-                opacity: 1;
-                translate: 0 0;
-            }
-        }
-    `;
-    document.head.appendChild(style);
+    // Slide up animation logic removed from CSS injection as it's now handled by scroll observer.
 }

@@ -4,6 +4,7 @@ export function initGlassEffects() {
     initSpotlight();
     initTilt();
     initMobileScrollEffects();
+    initScrollReveal();
 }
 
 function initSpotlight() {
@@ -108,4 +109,27 @@ function initMobileScrollEffects() {
 
     // Run once on load to catch cards already in view
     onScroll();
+}
+
+function initScrollReveal() {
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.15 // Trigger when 15% of the element is visible
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Add the animation class
+                entry.target.classList.add('reveal-visible');
+                // Stop observing once revealed (optional, remove if you want elements to hide/reveal constantly)
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    // Find all elements looking to be revealed
+    const revealElements = document.querySelectorAll('.reveal-on-scroll');
+    revealElements.forEach(el => observer.observe(el));
 }
