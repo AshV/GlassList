@@ -118,9 +118,9 @@ function renderSuggestedPosts(currentPostId) {
         suggestedContainer.style.height = 'auto';
 
         suggestedContainer.innerHTML = suggested.map((post, index) => `
-            <a href="post.html?id=${post.id}" class="glass-panel glass-spotlight tilt-card rounded-3xl overflow-hidden group cursor-pointer flex flex-col h-full !transform-none transition-all hover:scale-[1.02]" style="animation: slideUp 0.6s ease forwards ${index * 0.1}s; opacity: 0; translate: 0 20px;">
+            <a href="post.html?id=${post.id}" class="glass-panel glass-spotlight tilt-card rounded-3xl overflow-hidden group cursor-pointer flex flex-col h-full transition-all" style="display: flex; text-decoration: none; animation: slideUp 0.6s ease forwards ${index * 0.1}s; opacity: 0; translate: 0 20px;">
                 
-                <div class="h-40 overflow-hidden relative border-b border-white/5">
+                <div class="h-40 overflow-hidden relative">
                     <div class="absolute inset-0 bg-black/20 z-10 group-hover:bg-transparent transition-colors duration-500"></div>
                     <img src="${post.imageUrl}" alt="${post.title}" 
                         class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
