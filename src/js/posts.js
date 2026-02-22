@@ -31,7 +31,7 @@ function renderGrid(postData) {
     if (!container) return;
 
     container.innerHTML = postData.map((post, index) => `
-        <article class="glass-panel glass-spotlight tilt-card rounded-3xl overflow-hidden group cursor-pointer flex flex-col h-full" style="animation: slideUp 0.6s ease forwards ${index * 0.1}s; opacity: 0; translate: 0 20px;">
+        <a href="post.html?id=${post.id}" class="glass-panel glass-spotlight tilt-card rounded-3xl overflow-hidden group cursor-pointer flex flex-col h-full" style="display: flex; text-decoration: none; animation: slideUp 0.6s ease forwards ${index * 0.1}s; opacity: 0; translate: 0 20px;">
             
             <!-- Image Container with Parallax Zoom on Hover -->
             <div class="h-48 md:h-56 overflow-hidden relative border-b border-white/5">
@@ -54,7 +54,7 @@ function renderGrid(postData) {
                     Read Story <i data-lucide="arrow-right" class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform"></i>
                 </div>
             </div>
-        </article>
+        </a>
     `).join('');
 
     // Add Slide up animation
