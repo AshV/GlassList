@@ -90,5 +90,43 @@
         </section>
         
     </article>
+
+    <!-- Suggested Posts -->
+    <div class="w-full mt-4 md:mt-8 perspective-[1000px]">
+        <h3 class="text-2xl font-bold tracking-tight text-[var(--text-main)] mb-8 px-2 md:px-0">Read Next</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-10">
+            {{ $current := . }}
+            {{ range first 3 (where .Site.RegularPages "Permalink" "!=" .Permalink) }}
+                {{ $delay := mod (add 1 (len .Title)) 10 }}
+                
+                {{ $targetUrl := .Permalink }}
+                {{ $targetAttr := "" | safeHTMLAttr }}
+                {{ if isset .Params "redirecturl" }}
+                    {{ $targetUrl = .Params.redirecturl }}
+                    {{ $targetAttr = "target=\"_blank\" rel=\"noopener noreferrer\"" | safeHTMLAttr }}
+                {{ end }}
+
+                <a href="{{ $targetUrl }}" {{ $targetAttr }} class="glass-panel glass-spotlight tilt-card reveal-on-scroll rounded-[2rem] md:rounded-[2.5rem] overflow-hidden group cursor-pointer flex flex-col h-full animation-random-tilt" style="display: flex; text-decoration: none; animation-duration: 7s; animation-delay: -{{ $delay }}s;">
+                    
+                    <div class="h-48 md:h-56 overflow-hidden relative border-b border-[var(--glass-border)]">
+                        <div class="absolute inset-0 bg-black/20 z-10 group-hover:bg-transparent transition-colors duration-500"></div>
+                        <img src="{{ .Params.image }}" alt="{{ .Title }}" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
+                        
+                        <div class="absolute top-4 right-4 z-20 flex gap-2">
+                            {{ range .Params.tags }}
+                                <span class="tag px-3 py-1 text-xs font-medium rounded-full bg-[var(--glass-bg)] border border-[var(--glass-border)] backdrop-blur-md">{{ . }}</span>
+                            {{ end }}
+                        </div>
+                    </div>
+                    
+                    <div class="p-4 md:p-6 flex-1 flex flex-col justify-center tilt-content">
+                        <h3 class="text-xl md:text-2xl font-semibold leading-snug text-[var(--text-main)] transition-all">
+                            {{ .Title }}
+                        </h3>
+                    </div>
+                </a>
+            {{ end }}
+        </div>
+    </div>
 </main>
 {{ end }}

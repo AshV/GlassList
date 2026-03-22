@@ -9,7 +9,7 @@
             {{ range $index, $element := .Site.RegularPages }}
                 {{ $delay := mod $index 10 }}
                 
-                {{ $targetUrl := .RelPermalink }}
+                {{ $targetUrl := .Permalink }}
                 {{ $targetAttr := "" | safeHTMLAttr }}
                 {{ if isset .Params "redirecturl" }}
                     {{ $targetUrl = .Params.redirecturl }}
