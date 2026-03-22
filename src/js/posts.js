@@ -9,8 +9,16 @@ function renderGrid(postData) {
     const container = document.getElementById('posts-container');
     if (!container) return;
 
-    container.innerHTML = postData.map((post, index) => `
-        <a href="post.html?id=${post.id}" class="glass-panel glass-spotlight tilt-card reveal-on-scroll rounded-3xl overflow-hidden group cursor-pointer flex flex-col h-full animation-swing" style="display: flex; text-decoration: none; animation-delay: ${Math.random() * -6}s;">
+    container.innerHTML = postData.map((post, index) => {
+        const targetUrl = post.redirectUrl ? post.redirectUrl : `post.html?id=${post.id}`;
+        const targetAttr = post.redirectUrl ? `target="_blank" rel="noopener noreferrer"` : ``;
+
+        // Highly randomized animation duration and delay for true "random tilt" feel
+        const randomDuration = 6 + Math.random() * 5; // between 6s and 11s
+        const randomDelay = Math.random() * -10; // Spread out start times wildly
+
+        return `
+        <a href="${targetUrl}" ${targetAttr} class="glass-panel glass-spotlight tilt-card reveal-on-scroll rounded-3xl overflow-hidden group cursor-pointer flex flex-col h-full animation-random-tilt" style="display: flex; text-decoration: none; animation-duration: ${randomDuration}s; animation-delay: ${randomDelay}s;">
             
             <!-- Image Container with Parallax Zoom on Hover -->
             <div class="h-48 md:h-56 overflow-hidden relative border-b border-white/5">
@@ -24,17 +32,12 @@ function renderGrid(postData) {
             </div>
             
             <!-- Content -->
-            <div class="p-4 md:p-6 flex-1 flex flex-col tilt-content">
-                <h3 class="text-xl md:text-2xl font-semibold mb-3 leading-snug text-[var(--text-main)] transition-all">
+            <div class="p-4 md:p-6 flex-1 flex flex-col justify-center tilt-content">
+                <h3 class="text-xl md:text-2xl font-semibold leading-snug text-[var(--text-main)] transition-all">
                     ${post.title}
                 </h3>
-                
-                <div class="mt-auto flex items-center text-sm font-medium text-[var(--text-muted)] group-hover:text-current transition-colors">
-                    Read Story <i data-lucide="arrow-right" class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform"></i>
-                </div>
             </div>
         </a>
-    `).join('');
-
-    // Slide up animation logic removed from CSS injection as it's now handled by scroll observer.
+        `;
+    }).join('');
 }

@@ -260,21 +260,20 @@ body.theme-afternoon .text-glow {
 }
 
 /* Tilt & Swing Card Animation */
-@keyframes swing-card {
-    0% {
-        transform: perspective(1000px) translateY(0px) rotateX(1.5deg) rotateY(-1.5deg);
+@keyframes random-tilt {
+    0%, 100% {
+        transform: perspective(1000px) rotateX(2deg) rotateY(-3deg) translateZ(2px);
     }
-    33% {
-        transform: perspective(1000px) translateY(-6px) rotateX(-1.5deg) rotateY(1deg);
+    25% {
+        transform: perspective(1000px) rotateX(-2deg) rotateY(1deg) translateZ(-2px);
     }
-    66% {
-        transform: perspective(1000px) translateY(-3px) rotateX(0.5deg) rotateY(1.5deg);
+    50% {
+        transform: perspective(1000px) rotateX(3deg) rotateY(3deg) translateZ(5px);
     }
-    100% {
-        transform: perspective(1000px) translateY(-10px) rotateX(-1deg) rotateY(-1deg);
+    75% {
+        transform: perspective(1000px) rotateX(-1deg) rotateY(-2deg) translateZ(0px);
     }
 }
-
-.animation-swing {
-    animation: swing-card 10s ease-in-out infinite alternate;
+.animation-random-tilt {
+    animation: random-tilt 7s ease-in-out infinite alternate;
 }

@@ -60,8 +60,6 @@ function renderPostPage() {
                 </h1>
                 <div class="flex items-center gap-4 text-sm text-[var(--text-muted)] font-medium">
                     <span>${postInfo.date}</span>
-                    <span class="w-1 h-1 rounded-full bg-white/40"></span>
-                    <span>${postInfo.readTime}</span>
                 </div>
             </div>
 
@@ -78,7 +76,7 @@ function renderPostPage() {
                         prose-blockquote:text-[var(--text-main)] prose-blockquote:border-[var(--glass-border)]
                         prose-code:text-[var(--text-main)] prose-code:bg-[var(--glass-bg)] prose-code:rounded prose-code:px-1
                         prose-headings:font-semibold transition-colors duration-1000 text-glow">
-                ${postInfo.content}
+                ${window.marked ? window.marked.parse(postInfo.content) : postInfo.content}
             </div>
         `;
     }
@@ -92,33 +90,25 @@ function renderPostPage() {
     // X / Twitter Share
     const shareXBtn = document.querySelector('[title="Share on X"]');
     if (shareXBtn) {
-        shareXBtn.addEventListener('click', () => {
-            window.open(`https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent(title)}`, '_blank', 'noopener,noreferrer,width=600,height=400');
-        });
+        shareXBtn.href = `https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent(title)}`;
     }
 
     // Facebook Share
     const shareFbBtn = document.querySelector('[title="Share on Facebook"]');
     if (shareFbBtn) {
-        shareFbBtn.addEventListener('click', () => {
-            window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`, '_blank', 'noopener,noreferrer,width=600,height=400');
-        });
+        shareFbBtn.href = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
     }
 
     // WhatsApp Share
     const shareWaBtn = document.querySelector('[title="Share on WhatsApp"]');
     if (shareWaBtn) {
-        shareWaBtn.addEventListener('click', () => {
-            window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(title + " " + url)}`, '_blank', 'noopener,noreferrer');
-        });
+        shareWaBtn.href = `https://api.whatsapp.com/send?text=${encodeURIComponent(title + " " + url)}`;
     }
 
     // LinkedIn Share
     const shareLiBtn = document.querySelector('[title="Share on LinkedIn"]');
     if (shareLiBtn) {
-        shareLiBtn.addEventListener('click', () => {
-            window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`, '_blank', 'noopener,noreferrer,width=600,height=400');
-        });
+        shareLiBtn.href = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`;
     }
 
     const copyLinkBtn = document.querySelector('.copy-link-btn');
