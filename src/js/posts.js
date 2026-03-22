@@ -1,37 +1,16 @@
 import { posts } from './data.js';
 
 export function renderPosts() {
-    renderFilterBar();
     renderGrid(posts);
 }
 
-function renderFilterBar() {
-    const filterBar = document.getElementById('filter-bar');
-    if (!filterBar) return;
-
-    filterBar.innerHTML = `
-        <div class="glass-panel rounded-2xl p-4 flex flex-col sm:flex-row justify-between items-center gap-4 backdrop-blur-xl">
-            <div class="flex items-center gap-3 w-full sm:w-auto">
-                <button class="px-4 py-2 rounded-xl bg-[var(--text-main)] text-[var(--bg-color-main)] font-medium transition-colors">All</button>
-                <button class="px-4 py-2 rounded-xl text-[var(--text-muted)] hover:text-[var(--text-main)] transition-colors">Design</button>
-                <button class="px-4 py-2 rounded-xl text-[var(--text-muted)] hover:text-[var(--text-main)] transition-colors">Engineering</button>
-            </div>
-            
-            <div class="relative w-full sm:w-64 group">
-                <i data-lucide="search" class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[var(--text-muted)] group-focus-within:text-[var(--text-main)] transition-colors"></i>
-                <input type="text" placeholder="Search insights..." 
-                    class="w-full bg-[var(--glass-bg)] border border-[var(--glass-border)] rounded-xl py-2 pl-10 pr-4 text-[var(--text-main)] placeholder:text-[var(--text-muted)] focus:outline-none focus:border-[var(--glass-highlight)] transition-all">
-            </div>
-        </div>
-    `;
-}
 
 function renderGrid(postData) {
     const container = document.getElementById('posts-container');
     if (!container) return;
 
     container.innerHTML = postData.map((post, index) => `
-        <a href="post.html?id=${post.id}" class="glass-panel glass-spotlight tilt-card reveal-on-scroll rounded-3xl overflow-hidden group cursor-pointer flex flex-col h-full" style="display: flex; text-decoration: none;">
+        <a href="post.html?id=${post.id}" class="glass-panel glass-spotlight tilt-card reveal-on-scroll rounded-3xl overflow-hidden group cursor-pointer flex flex-col h-full animation-swing" style="display: flex; text-decoration: none; animation-delay: ${Math.random() * -6}s;">
             
             <!-- Image Container with Parallax Zoom on Hover -->
             <div class="h-48 md:h-56 overflow-hidden relative border-b border-white/5">

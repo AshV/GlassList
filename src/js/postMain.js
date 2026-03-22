@@ -54,13 +54,13 @@ function renderPostPage() {
             </div>
 
             <!-- Title and Meta -->
-            <div class="flex flex-col gap-3 mt-4">
+            <div class="flex flex-col gap-3 mt-4 text-glow">
                 <h1 class="text-3xl md:text-5xl font-bold tracking-tight text-[var(--text-main)] leading-tight">
                     ${postInfo.title}
                 </h1>
                 <div class="flex items-center gap-4 text-sm text-[var(--text-muted)] font-medium">
                     <span>${postInfo.date}</span>
-                    <span class="w-1 h-1 rounded-full bg-white/20"></span>
+                    <span class="w-1 h-1 rounded-full bg-white/40"></span>
                     <span>${postInfo.readTime}</span>
                 </div>
             </div>
@@ -77,7 +77,7 @@ function renderPostPage() {
                         prose-li:text-[var(--text-main)] 
                         prose-blockquote:text-[var(--text-main)] prose-blockquote:border-[var(--glass-border)]
                         prose-code:text-[var(--text-main)] prose-code:bg-[var(--glass-bg)] prose-code:rounded prose-code:px-1
-                        prose-headings:font-semibold transition-colors duration-1000">
+                        prose-headings:font-semibold transition-colors duration-1000 text-glow">
                 ${postInfo.content}
             </div>
         `;
@@ -85,10 +85,46 @@ function renderPostPage() {
 
     // Prepare Share Button logic
     document.getElementById('share-section').classList.remove('hidden');
+    
+    const url = window.location.href;
+    const title = postInfo.title;
+
+    // X / Twitter Share
+    const shareXBtn = document.querySelector('[title="Share on X"]');
+    if (shareXBtn) {
+        shareXBtn.addEventListener('click', () => {
+            window.open(`https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent(title)}`, '_blank', 'noopener,noreferrer,width=600,height=400');
+        });
+    }
+
+    // Facebook Share
+    const shareFbBtn = document.querySelector('[title="Share on Facebook"]');
+    if (shareFbBtn) {
+        shareFbBtn.addEventListener('click', () => {
+            window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`, '_blank', 'noopener,noreferrer,width=600,height=400');
+        });
+    }
+
+    // WhatsApp Share
+    const shareWaBtn = document.querySelector('[title="Share on WhatsApp"]');
+    if (shareWaBtn) {
+        shareWaBtn.addEventListener('click', () => {
+            window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(title + " " + url)}`, '_blank', 'noopener,noreferrer');
+        });
+    }
+
+    // LinkedIn Share
+    const shareLiBtn = document.querySelector('[title="Share on LinkedIn"]');
+    if (shareLiBtn) {
+        shareLiBtn.addEventListener('click', () => {
+            window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`, '_blank', 'noopener,noreferrer,width=600,height=400');
+        });
+    }
+
     const copyLinkBtn = document.querySelector('.copy-link-btn');
     if (copyLinkBtn) {
         copyLinkBtn.addEventListener('click', () => {
-            navigator.clipboard.writeText(window.location.href);
+            navigator.clipboard.writeText(url);
             alert("Link copied to clipboard!");
         });
     }
@@ -118,7 +154,7 @@ function renderSuggestedPosts(currentPostId) {
         suggestedContainer.style.height = 'auto';
 
         suggestedContainer.innerHTML = suggested.map((post, index) => `
-            <a href="post.html?id=${post.id}" class="glass-panel glass-spotlight tilt-card reveal-on-scroll rounded-3xl overflow-hidden group cursor-pointer flex flex-col h-full transition-all" style="display: flex; text-decoration: none;">
+            <a href="post.html?id=${post.id}" class="glass-panel glass-spotlight tilt-card reveal-on-scroll rounded-3xl overflow-hidden group cursor-pointer flex flex-col h-full transition-all animation-swing" style="display: flex; text-decoration: none; animation-delay: ${Math.random() * -6}s;">
                 
                 <div class="h-40 overflow-hidden relative">
                     <div class="absolute inset-0 bg-black/20 z-10 group-hover:bg-transparent transition-colors duration-500"></div>

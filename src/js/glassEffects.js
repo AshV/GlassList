@@ -44,6 +44,13 @@ function initTilt() {
             // Reset to default smoothly
             card.style.transform = `perspective(1000px) translateY(0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg)`;
             card.style.transition = 'transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1)';
+            
+            // Allow the CSS animation to take back over after the smooth hover reset transition finishes.
+            setTimeout(() => { 
+                if (!card.matches(':hover')) {
+                    card.style.transform = ''; 
+                }
+            }, 500);
         });
 
         card.addEventListener('mouseenter', () => {

@@ -248,3 +248,33 @@ body.theme-afternoon .glass-spotlight::before {
     opacity: 1;
     transform: translateY(0);
 }
+
+/* Text Readability Glow */
+.text-glow {
+    text-shadow: 0 0 12px rgba(0, 0, 0, 0.7), 0 2px 5px rgba(0, 0, 0, 0.9);
+}
+
+body.theme-morning .text-glow,
+body.theme-afternoon .text-glow {
+    text-shadow: 0 0 12px rgba(255, 255, 255, 0.8), 0 2px 5px rgba(255, 255, 255, 1);
+}
+
+/* Tilt & Swing Card Animation */
+@keyframes swing-card {
+    0% {
+        transform: perspective(1000px) translateY(0px) rotateX(1.5deg) rotateY(-1.5deg);
+    }
+    33% {
+        transform: perspective(1000px) translateY(-6px) rotateX(-1.5deg) rotateY(1deg);
+    }
+    66% {
+        transform: perspective(1000px) translateY(-3px) rotateX(0.5deg) rotateY(1.5deg);
+    }
+    100% {
+        transform: perspective(1000px) translateY(-10px) rotateX(-1deg) rotateY(-1deg);
+    }
+}
+
+.animation-swing {
+    animation: swing-card 10s ease-in-out infinite alternate;
+}
