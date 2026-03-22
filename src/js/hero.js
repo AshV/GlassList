@@ -15,10 +15,10 @@ export function renderHero() {
                 <!-- Intro -->
                 <div class="flex flex-col justify-center">
                     <h1 class="text-base min-[400px]:text-lg md:text-2xl font-bold tracking-tight text-[var(--text-main)] leading-none mb-1 md:mb-1.5 focus:outline-none">
-                         <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">Ashish</span>
+                         <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">Ashish Vishwakarma</span>
                     </h1>
                     <p class="text-[var(--text-muted)] text-[10px] min-[400px]:text-xs md:text-sm font-medium leading-none">
-                        Digital Experiences Maker
+                        Software Engineer | AI Enthusiast | Open Source Contributor
                     </p>
                 </div>
             </div>
