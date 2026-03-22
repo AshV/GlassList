@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Performance on Ashish Vishwakarma</title>
+    <link>https://www.ashishvishwakarma.com/GlassList/tags/performance/</link>
+    <description>Recent content in Performance on Ashish Vishwakarma</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 18 Jul 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://www.ashishvishwakarma.com/GlassList/tags/performance/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Optimizing WebGL for Mobile Experiences</title>
+      <link>https://www.ashishvishwakarma.com/GlassList/posts/2026-07-18-optimizing-webgl-mobile/</link>
+      <pubDate>Sat, 18 Jul 2026 00:00:00 +0000</pubDate>
+      <guid>https://www.ashishvishwakarma.com/GlassList/posts/2026-07-18-optimizing-webgl-mobile/</guid>
+      <description>&lt;p&gt;Rendering rich 3D graphics on mobile browsers is notorious for battery drain and thermal throttling.&lt;/p&gt;&#xA;&lt;p&gt;Optimizing these shader effects requires a multi-pronged strategy.&lt;/p&gt;&#xA;&lt;h2 id=&#34;resolution-scaling&#34;&gt;Resolution Scaling&lt;/h2&gt;&#xA;&lt;p&gt;One of the most effective techniques is dynamic resolution scaling. We don&amp;rsquo;t necessarily need to render the WebGL canvas at the native device pixel ratio (like 3x on modern iPhones). Stepping down the resolution slightly before applying a cheap post-processing anti-aliasing pass often yields identical visual results at a fraction of the cost.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

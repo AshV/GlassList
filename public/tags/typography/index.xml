@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Typography on Ashish Vishwakarma</title>
+    <link>https://www.ashishvishwakarma.com/GlassList/tags/typography/</link>
+    <description>Recent content in Typography on Ashish Vishwakarma</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 11 Mar 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://www.ashishvishwakarma.com/GlassList/tags/typography/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Typography in the Spatial Era</title>
+      <link>https://www.ashishvishwakarma.com/GlassList/posts/2026-03-11-typography-spatial-era/</link>
+      <pubDate>Wed, 11 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>https://www.ashishvishwakarma.com/GlassList/posts/2026-03-11-typography-spatial-era/</guid>
+      <description>&lt;p&gt;Setting type for traditional screens is a solved problem. Setting it for an environment where the &amp;lsquo;canvas&amp;rsquo; is the user&amp;rsquo;s living room is heavily uncharted territory.&lt;/p&gt;&#xA;&lt;h2 id=&#34;contrast-and-legibility&#34;&gt;Contrast and Legibility&lt;/h2&gt;&#xA;&lt;p&gt;Because the background in spatial UI is completely variable—it could be a white wall or a dark forest floor—typography needs inherent protection.&lt;/p&gt;&#xA;&lt;p&gt;We rely on vibrant materials (like glass effects) and dynamic shadowing not just for aesthetics, but to guarantee text legibility. Heavy weights, generous line-heights, and specifically tuned tracking are imperative when your text is floating three meters away from the viewer.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

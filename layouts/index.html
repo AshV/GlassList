@@ -10,7 +10,7 @@
                 {{ $delay := mod $index 10 }}
                 
                 {{ $targetUrl := .RelPermalink }}
-                {{ $targetAttr := "" }}
+                {{ $targetAttr := "" | safeHTMLAttr }}
                 {{ if isset .Params "redirecturl" }}
                     {{ $targetUrl = .Params.redirecturl }}
                     {{ $targetAttr = "target=\"_blank\" rel=\"noopener noreferrer\"" | safeHTMLAttr }}

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>UI/UX on Ashish Vishwakarma</title>
+    <link>https://www.ashishvishwakarma.com/GlassList/tags/ui/ux/</link>
+    <description>Recent content in UI/UX on Ashish Vishwakarma</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 24 Oct 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://www.ashishvishwakarma.com/GlassList/tags/ui/ux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Future of Spatial Interfaces</title>
+      <link>https://www.ashishvishwakarma.com/GlassList/posts/2026-10-24-future-of-spatial-interfaces/</link>
+      <pubDate>Sat, 24 Oct 2026 00:00:00 +0000</pubDate>
+      <guid>https://www.ashishvishwakarma.com/GlassList/posts/2026-10-24-future-of-spatial-interfaces/</guid>
+      <description>&lt;p&gt;The transition from flat-screen interfaces to spatial computing requires a fundamental rethinking of how we interact with digital content.&lt;/p&gt;&#xA;&lt;h2 id=&#34;the-glassmorphism-evolution&#34;&gt;The Glassmorphism Evolution&lt;/h2&gt;&#xA;&lt;p&gt;Glassmorphism has been a popular design trend for a few years, but its true potential is unlocked in 3D environments. By utilizing depth-mapping, translucency, and light refraction, designers can create interfaces that feel physically present in the user&amp;rsquo;s environment.&lt;/p&gt;&#xA;&lt;h3 id=&#34;key-principles&#34;&gt;Key Principles&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Materiality:&lt;/strong&gt; Objects should look and behave somewhat like physical glass.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Depth:&lt;/strong&gt; Layering content helps establish a clear visual hierarchy.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Context:&lt;/strong&gt; The interface should subtly adapt to its surroundings behind it.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;As we move forward, the most successful spatial apps will not simply project 2D apps into 3D space, but completely rethink the metaphors we rely on.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
